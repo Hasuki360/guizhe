@@ -47,7 +47,7 @@ DOMAIN-SUFFIX,epg.aptv.app
 DOMAIN-SUFFIX,gdcucc.v1.mk
 
 # BT规则
-#tracker 相关
+# tracker 相关
 DOMAIN-KEYWORD,tracker
 DOMAIN-KEYWORD,torrent
 DOMAIN-SUFFIX,0123456789nonexistent.com:80
