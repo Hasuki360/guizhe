@@ -17,3 +17,8 @@ DOMAIN-SUFFIX,docker.com
 DOMAIN-SUFFIX,docker.io
 DOMAIN-SUFFIX,docker.fxxk.dedyn.io
 DOMAIN-SUFFIX,ghcr.io
+
+# 特摄
+DOMAIN-SUFFIX,tapecontent.net
+DOMAIN-SUFFIX,ggcollectionn.blogspot.com
+
