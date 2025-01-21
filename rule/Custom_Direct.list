@@ -5,6 +5,9 @@
 # 部分域名可能和中国大陆域名列表存在重叠
 # 规则内容较少，不会影响性能，请放心使用
 
+# 杂规则
+DOMAIN-SUFFIX,feemoo.com
+
 # 游戏类规则
 # 暴雪战网国际服下载节点
 DOMAIN-SUFFIX,blizzard.gcdn.cloudn.co.kr
