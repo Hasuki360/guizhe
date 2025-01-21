@@ -11,3 +11,9 @@ DOMAIN-SUFFIX,share.ilolicon.com
 DOMAIN-SUFFIX,pttime.org
 DOMAIN-SUFFIX,zmpt.cc
 DOMAIN-SUFFIX,pt.btschool.club
+
+# docker
+DOMAIN-SUFFIX,docker.com
+DOMAIN-SUFFIX,docker.io
+DOMAIN-SUFFIX,docker.fxxk.dedyn.io
+DOMAIN-SUFFIX,ghcr.io
