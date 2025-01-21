@@ -3,6 +3,9 @@
 # REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
 # 强制代理列表，来自个人收集
 
+# 加密货币 相关
+DOMAIN-SUFFIX,aicoin.com
+
 # PT 相关
 DOMAIN-SUFFIX,fsm.name
 DOMAIN-SUFFIX,kamept.com
@@ -12,7 +15,7 @@ DOMAIN-SUFFIX,pttime.org
 DOMAIN-SUFFIX,zmpt.cc
 DOMAIN-SUFFIX,pt.btschool.club
 
-# docker
+# docker 相关
 DOMAIN,d1q6f0aelx0por.cloudfront.net
 DOMAIN,d2wy8f7a9ursnm.cloudfront.net
 DOMAIN,d36jcksde1wxzq.cloudfront.net
@@ -23,7 +26,7 @@ DOMAIN-SUFFIX,docker.fxxk.dedyn.io
 DOMAIN-SUFFIX,dockerhub.com
 DOMAIN-SUFFIX,ghcr.io
 
-# 特摄
+# 特摄 相关
 DOMAIN-SUFFIX,tapecontent.net
 DOMAIN-SUFFIX,ggcollectionn.blogspot.com
 
