@@ -1,6 +1,7 @@
 payload:
 # 杂规则
   - DOMAIN-SUFFIX,feemoo.com
+  - DOMAIN-SUFFIX,auth.huaweicloud.com
 
 # 游戏类规则
 # 暴雪战网国际服下载节点
