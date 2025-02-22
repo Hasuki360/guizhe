@@ -4,7 +4,8 @@
 # 强制代理列表，来自个人收集
 
 # 其他
-DOMAIN,hanime1.me
+DOMAIN-SUFFIX,hanime1.me
+DOMAIN-SUFFIX,yxssp.com
 
 # 加密货币 相关
 DOMAIN-SUFFIX,aicoin.com
