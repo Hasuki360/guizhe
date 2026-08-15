@@ -1,22 +1,23 @@
 payload:
-# 其他
-  - DOMAIN,hanime1.me
+  # 论坛 / 常用社区
+  - DOMAIN-SUFFIX,anyrouter.top
+  - DOMAIN-SUFFIX,shuzijumin.com
   - DOMAIN-SUFFIX,yxssp.com
-  - DOMAIN-SUFFIX,linux.do
 
-# 加密货币 相关
+  # 加密货币 / 金融支付
   - DOMAIN-SUFFIX,aicoin.com
+  - DOMAIN-SUFFIX,personal.dtcpay.com
 
-# PT 相关
+  # PT 站点 Web 访问
   - DOMAIN-SUFFIX,fsm.name
   - DOMAIN-SUFFIX,kamept.com
   - DOMAIN-SUFFIX,rousi.zip
-  - DOMAIN-SUFFIX,share.ilolicon.com
+  - DOMAIN-SUFFIX,ilolicon.com
   - DOMAIN-SUFFIX,pttime.org
   - DOMAIN-SUFFIX,zmpt.cc
-  - DOMAIN-SUFFIX,pt.btschool.club
+  - DOMAIN-SUFFIX,btschool.club
 
-# docker 相关
+  # Docker 与容器镜像加速
   - DOMAIN,d1q6f0aelx0por.cloudfront.net
   - DOMAIN,d2wy8f7a9ursnm.cloudfront.net
   - DOMAIN,d36jcksde1wxzq.cloudfront.net
@@ -27,6 +28,6 @@ payload:
   - DOMAIN-SUFFIX,dockerhub.com
   - DOMAIN-SUFFIX,ghcr.io
 
-# 特摄 相关
+  # 特摄 / 影视资源
   - DOMAIN-SUFFIX,tapecontent.net
   - DOMAIN-SUFFIX,ggcollectionn.blogspot.com
