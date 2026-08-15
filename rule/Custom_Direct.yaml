@@ -1,3 +1,13 @@
 payload:
-# 杂规则
+  # 个人自定义直连网站
   - DOMAIN-SUFFIX,feemoo.com
+  - DOMAIN-SUFFIX,api-proxy.me
+
+  # M-Team (馒头 PT) 专属直连
+  - DOMAIN-KEYWORD,m-team
+  - DOMAIN-SUFFIX,manfuz.co
+  - DOMAIN-SUFFIX,m-team.cc
+  - DOMAIN-SUFFIX,m-team.io
+
+  # 以后如果还有其他想直连的域名，直接在下面回车追加即可：
+  # - DOMAIN-SUFFIX,xxx.com
