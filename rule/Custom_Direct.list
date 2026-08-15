@@ -1,47 +1,9 @@
-# NAME: Custom_Direct
-# AUTHOR: Aethersailor
-# REPO: https://github.com/Aethersailor/Custom_OpenClash_Rules
-# 强制直连域名列表，来自个人收集
-# 部分域名可能和中国大陆域名列表存在重叠
-# 规则内容较少，不会影响性能，请放心使用
-
 # 杂规则
 DOMAIN-SUFFIX,feemoo.com
-DOMAIN-SUFFIX,auth.huaweicloud.com
+DOMAIN-SUFFIX,api-proxy.me
 
-# 游戏类规则
-# 暴雪战网国际服下载节点
-DOMAIN-SUFFIX,blizzard.gcdn.cloudn.co.kr
-DOMAIN-SUFFIX,level3.blizzard.com
-DOMAIN-SUFFIX,kr.cdn.blizzard.com
-DOMAIN-SUFFIX,us.cdn.blizzard.com
-DOMAIN-SUFFIX,eu.cdn.blizzard.com
-IP-CIDR,137.221.64.0/24,no-resolve
-IP-CIDR,8.251.135.126/32,no-resolve
-IP-CIDR,8.251.246.126/32,no-resolve
-# EA-Desktop 下载节点
-DOMAIN-SUFFIX,origin-a.akamaihd.net
-IP-CIDR,104.75.169.19/32,no-resolve
-# 微软飞行模拟 2020 游戏内下载 CDN
-DOMAIN,pf-cdn-content-prod.azureedge.net
-# 暴雪战网国服相关
-DOMAIN-SUFFIX,netease.com
-DOMAIN-SUFFIX,leihuo.netease.com
-# FLiNG Trainer
-DOMAIN-SUFFIX,flingtrainer.com
-
-# 媒体类规则
-# Emby 小雅 相关
-DOMAIN-SUFFIX,ddsrem.com
-DOMAIN-SUFFIX,ipinfo.io
-DOMAIN-SUFFIX,ggbond.org
-DOMAIN-SUFFIX,nn.ci
-DOMAIN-SUFFIX,xhofe.top
-DOMAIN-SUFFIX,wwwh.eu.org
-DOMAIN-SUFFIX,1996999.xyz
-# IPTV 相关
-DOMAIN-SUFFIX,cmdns.xyz
-DOMAIN-SUFFIX,112114.xyz
-DOMAIN-SUFFIX,epg.v1.mk
-DOMAIN-SUFFIX,epg.aptv.app
-DOMAIN-SUFFIX,gdcucc.v1.mk
+# M-Team (馒头 PT) 专属直连
+DOMAIN-KEYWORD,m-team
+DOMAIN-SUFFIX,manfuz.co
+DOMAIN-SUFFIX,m-team.cc
+DOMAIN-SUFFIX,m-team.io
