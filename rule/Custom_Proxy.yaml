@@ -2,6 +2,7 @@ payload:
   # 论坛 / 常用社区
   - DOMAIN-SUFFIX,anyrouter.top
   - DOMAIN-SUFFIX,shuzijumin.com
+  - DOMAIN-SUFFIX,zodacc.com
 
   # 加密货币 / 金融支付
   - DOMAIN-SUFFIX,aicoin.com
