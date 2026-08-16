@@ -1,8 +1,13 @@
 payload:
+  # PT Tracker 走代理
+  - DOMAIN-SUFFIX,rousi.pro,代理模式
+  - DOMAIN-SUFFIX,btschool.club
+  
   # 论坛 / 常用社区
   - DOMAIN-SUFFIX,anyrouter.top
   - DOMAIN-SUFFIX,shuzijumin.com
   - DOMAIN-SUFFIX,zodacc.com
+  - DOMAIN-SUFFIX,kitty.fo
 
   # 加密货币 / 金融支付
   - DOMAIN-SUFFIX,aicoin.com
