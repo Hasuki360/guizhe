@@ -1,6 +1,6 @@
 payload:
   # PT Tracker 走代理
-  - DOMAIN-SUFFIX,rousi.pro,代理模式
+  - DOMAIN-SUFFIX,rousi.pro
   - DOMAIN-SUFFIX,btschool.club
   
   # 论坛 / 常用社区
