@@ -4,6 +4,7 @@ payload:
   - DOMAIN-SUFFIX,shuzijumin.com
   - DOMAIN-SUFFIX,zodacc.com
   - DOMAIN-SUFFIX,kitty.fo
+  - DOMAIN-SUFFIX,linux.do
   
   # PT Tracker 走代理
   - DOMAIN-SUFFIX,rousi.pro
@@ -16,6 +17,18 @@ payload:
   # 特摄 / 影视资源
   - DOMAIN-SUFFIX,tapecontent.net
   - DOMAIN-SUFFIX,ggcollectionn.blogspot.com
+
+  # 南+镜像域名
+  - DOMAIN-SUFFIX,south-plus.net
+  - DOMAIN-SUFFIX,blue-plus.net
+  - DOMAIN-SUFFIX,white-plus.net
+  - DOMAIN-SUFFIX,spring-plus.net
+  - DOMAIN-SUFFIX,north-plus.net
+  - DOMAIN-SUFFIX,east-plus.net
+  - DOMAIN-SUFFIX,level-plus.net
+  - DOMAIN-SUFFIX,summer-plus.net
+  - DOMAIN-SUFFIX,snow-plus.net
+  - DOMAIN-SUFFIX,bbs.imoutolove.me
 
   # 原版追加
 
