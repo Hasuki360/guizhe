@@ -2,10 +2,12 @@ payload:
   # 常用
   - DOMAIN-SUFFIX,anyrouter.top
   - DOMAIN-SUFFIX,shuzijumin.com
-  - DOMAIN-SUFFIX,zodacc.com
-  - DOMAIN-SUFFIX,kitty.fo
   - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,fantia.jp
+
+  # 代理网站
+  - DOMAIN-SUFFIX,zodacc.com
+  - DOMAIN-SUFFIX,kitty.fo  
   
   # PT Tracker 走代理
   - DOMAIN-SUFFIX,rousi.pro
@@ -13,7 +15,6 @@ payload:
 
   # 加密货币 / 金融支付
   - DOMAIN-SUFFIX,aicoin.com
-  - DOMAIN-SUFFIX,personal.dtcpay.com
 
   # 特摄 / 影视资源
   - DOMAIN-SUFFIX,tapecontent.net
