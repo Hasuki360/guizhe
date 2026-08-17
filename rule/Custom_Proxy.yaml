@@ -5,6 +5,7 @@ payload:
   - DOMAIN-SUFFIX,zodacc.com
   - DOMAIN-SUFFIX,kitty.fo
   - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,fantia.jp
   
   # PT Tracker 走代理
   - DOMAIN-SUFFIX,rousi.pro
