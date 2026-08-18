@@ -1,5 +1,7 @@
 payload:
-  # 个人自定义直连网站
+  # 自定义直连网站
+  - DOMAIN-KEYWORD,immersivetranslate.com  
+  
   # M-Team (馒头 PT) 专属直连
   - DOMAIN-KEYWORD,m-team
   - DOMAIN-SUFFIX,manfuz.co
