@@ -1,1 +1,17 @@
+payload:
+  # 常用
+  - DOMAIN-SUFFIX,javdb.com
+  - DOMAIN-SUFFIX,serv00.com
+  - DOMAIN-SUFFIX,linux.do  
 
+  # 南+镜像域名
+  - DOMAIN-SUFFIX,south-plus.net
+  - DOMAIN-SUFFIX,blue-plus.net
+  - DOMAIN-SUFFIX,white-plus.net
+  - DOMAIN-SUFFIX,spring-plus.net
+  - DOMAIN-SUFFIX,north-plus.net
+  - DOMAIN-SUFFIX,east-plus.net
+  - DOMAIN-SUFFIX,level-plus.net
+  - DOMAIN-SUFFIX,summer-plus.net
+  - DOMAIN-SUFFIX,snow-plus.net
+  - DOMAIN-SUFFIX,bbs.imoutolove.me
