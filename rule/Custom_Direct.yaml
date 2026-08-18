@@ -1,8 +1,5 @@
 payload:
   # 个人自定义直连网站
-  - DOMAIN-SUFFIX,feemoo.com
-  - DOMAIN-SUFFIX,api-proxy.me
-
   # M-Team (馒头 PT) 专属直连
   - DOMAIN-KEYWORD,m-team
   - DOMAIN-SUFFIX,manfuz.co
