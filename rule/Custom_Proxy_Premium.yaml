@@ -2,6 +2,7 @@ payload:
   # 常用
   - DOMAIN-SUFFIX,serv00.com
   - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,sleazyfork.org
   
   # 色色
   - DOMAIN-SUFFIX,javdb.com  
