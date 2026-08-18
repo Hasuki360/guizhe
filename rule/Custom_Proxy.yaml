@@ -11,7 +11,7 @@ payload:
   - DOMAIN-SUFFIX,zodacc.com
   - DOMAIN-SUFFIX,kitty.fo  
   
-  # PT Tracker 走代理
+  # PT Tracker
   - DOMAIN-SUFFIX,rousi.pro
   - DOMAIN-SUFFIX,btschool.club
 
