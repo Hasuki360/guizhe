@@ -3,7 +3,10 @@ payload:
   - DOMAIN-SUFFIX,javdb.com
   - DOMAIN-SUFFIX,serv00.com
   - DOMAIN-SUFFIX,linux.do  
-
+  
+  # Nexus Mods (N站 Mod)
+  - DOMAIN-SUFFIX,nexusmods.com
+  
   # 南+镜像域名
   - DOMAIN-SUFFIX,south-plus.net
   - DOMAIN-SUFFIX,blue-plus.net
