@@ -1,9 +1,12 @@
 payload:
   # 常用
-  - DOMAIN-SUFFIX,javdb.com
   - DOMAIN-SUFFIX,serv00.com
-  - DOMAIN-SUFFIX,linux.do  
+  - DOMAIN-SUFFIX,linux.do
   
+  # 色色
+  - DOMAIN-SUFFIX,javdb.com  
+  - DOMAIN-SUFFIX,javlibrary.com
+
   # Nexus Mods (N站 Mod)
   - DOMAIN-SUFFIX,nexusmods.com
   
