@@ -8,7 +8,7 @@ payload:
   - DOMAIN-SUFFIX,javdb.com
   - DOMAIN-SUFFIX,javlibrary.com
 
-  # Nexus Mods (N站 Mod)
+  # Nexus Mods
   - DOMAIN-SUFFIX,nexusmods.com
 
   # 南+全部域名
