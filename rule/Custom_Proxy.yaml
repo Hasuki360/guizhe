@@ -2,6 +2,8 @@ payload:
   # 常用
   - DOMAIN-SUFFIX,anyrouter.top  
   - DOMAIN-SUFFIX,shuzijumin.com
+  
+  # 色色
   - DOMAIN-SUFFIX,cospuri.com
   - DOMAIN-SUFFIX,fantia.jp
 
