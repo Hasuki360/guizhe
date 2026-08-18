@@ -3,15 +3,15 @@ payload:
   - DOMAIN-SUFFIX,serv00.com
   - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,sleazyfork.org
-  
+
   # 色色
-  - DOMAIN-SUFFIX,javdb.com  
+  - DOMAIN-SUFFIX,javdb.com
   - DOMAIN-SUFFIX,javlibrary.com
 
   # Nexus Mods (N站 Mod)
   - DOMAIN-SUFFIX,nexusmods.com
-  
-  # 南+镜像域名
+
+  # 南+全部域名
   - DOMAIN-SUFFIX,south-plus.net
   - DOMAIN-SUFFIX,blue-plus.net
   - DOMAIN-SUFFIX,white-plus.net
