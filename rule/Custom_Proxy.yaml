@@ -16,9 +16,6 @@ payload:
   - DOMAIN-SUFFIX,rousi.pro
   - DOMAIN-SUFFIX,btschool.club
 
-  # 加密货币 / 金融支付
-  - DOMAIN-SUFFIX,aicoin.com
-
   # 特摄 / 影视资源
   - DOMAIN-SUFFIX,tapecontent.net
   
