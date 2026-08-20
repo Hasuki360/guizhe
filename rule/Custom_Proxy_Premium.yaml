@@ -11,6 +11,9 @@ payload:
   # Nexus Mods
   - DOMAIN-SUFFIX,nexusmods.com
 
+  # 加密货币 / 金融支付
+  - DOMAIN-SUFFIX,aicoin.com
+  
   # 南+全部域名
   - DOMAIN-SUFFIX,south-plus.net
   - DOMAIN-SUFFIX,blue-plus.net
