@@ -15,6 +15,7 @@ payload:
   # PT Tracker
   - DOMAIN-SUFFIX,rousi.pro
   - DOMAIN-SUFFIX,btschool.club
+  - DOMAIN-SUFFIX,zmpt.cc
 
   # 特摄 / 影视资源
   - DOMAIN-SUFFIX,tapecontent.net
