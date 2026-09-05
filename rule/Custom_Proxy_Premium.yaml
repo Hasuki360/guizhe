@@ -1,5 +1,6 @@
 payload:
   # 常用
+  - DOMAIN-SUFFIX,anyrouter.top  
   - DOMAIN-SUFFIX,serv00.com
   - DOMAIN-SUFFIX,linux.do
   - DOMAIN-SUFFIX,sleazyfork.org
