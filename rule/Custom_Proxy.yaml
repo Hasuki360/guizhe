@@ -1,6 +1,5 @@
 payload:
-  # 常用
-  - DOMAIN-SUFFIX,anyrouter.top  
+  # 常用  
   - DOMAIN-SUFFIX,shuzijumin.com
   - DOMAIN-SUFFIX,hanime1.me  
   
