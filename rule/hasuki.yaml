@@ -3,3 +3,4 @@ payload:
   - DOMAIN-SUFFIX,hasuki.top
   - IP-CIDR,119.13.109.242/32,no-resolve
   - IP-CIDR,140.245.53.143/32,no-resolve
+  - IP-CIDR6,2603:c02b:30c:7e00::/64,no-resolve
