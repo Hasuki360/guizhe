@@ -3,7 +3,7 @@ payload:
   - DOMAIN-SUFFIX,hasuki.top
   - IP-CIDR,119.13.109.242/32,no-resolve
 # 新加坡西
-  - IP-CIDR,140.245.62.173/32,no-resolve
+  - IP-CIDR,140.245.47.52/32,no-resolve
 # 春川
   - IP-CIDR,140.91.230.15/32,no-resolve
 # 新加坡西小鸡
