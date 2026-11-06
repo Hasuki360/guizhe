@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "shuzijumin.com",
+        "hanime1.me",
+        "cospuri.com",
+        "fantia.jp",
+        "zodacc.com",
+        "kitty.fo",
+        "rousi.pro",
+        "btschool.club",
+        "zmpt.cc",
+        "tapecontent.net"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "domain_suffix": [
+        "anyrouter.top",
+        "serv00.com",
+        "linux.do",
+        "nodeseek.com",
+        "sleazyfork.org",
+        "javdb.com",
+        "javlibrary.com",
+        "nexusmods.com",
+        "aicoin.com",
+        "south-plus.net",
+        "blue-plus.net",
+        "white-plus.net",
+        "spring-plus.net",
+        "north-plus.net",
+        "east-plus.net",
+        "level-plus.net",
+        "summer-plus.net",
+        "snow-plus.net",
+        "bbs.imoutolove.me"
+      ]
+    }
+  ]
+}

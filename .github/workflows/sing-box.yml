@@ -1,0 +1,97 @@
+name: Build sing-box rule sets
+
+# 把 rule/ 下的 Clash 规则自动转换成 sing/ 下的 sing-box 规则集，
+# 第三方里社区没有 sing-box 版的（EHGallery / BilibiliHMT）一并抓取转换。
+#
+# 触发条件:
+#   - 改了 rule/ 或转换脚本
+#   - 每天定时拉一次第三方上游（上游更新后自动跟进）
+#   - 手动触发
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'rule/**'
+      - 'scripts/clash2sing.py'
+      - '.github/workflows/sing-box.yml'
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sing-box-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 转换私有规则（rule/*.yaml）
+        run: |
+          set -euo pipefail
+          mkdir -p sing sing/thirdparty
+          python3 scripts/clash2sing.py rule/hasuki.yaml                sing/hasuki.json               --name hasuki
+          python3 scripts/clash2sing.py rule/Custom_Direct.yaml         sing/custom-direct.json        --name Custom_Direct
+          python3 scripts/clash2sing.py rule/Custom_Proxy.yaml          sing/custom-proxy.json         --name Custom_Proxy
+          python3 scripts/clash2sing.py rule/Custom_Proxy_Premium.yaml sing/custom-proxy-premium.json --name Custom_Proxy_Premium
+
+      - name: 转换第三方补全（社区无 sing-box 版）
+        run: |
+          set -euo pipefail
+          EHGAL='https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script@master/rule/Clash/EHGallery/EHGallery.yaml'
+          BHMT='https://fastly.jsdelivr.net/gh/xiaolin-007/clash@main/rule/BilibiliHMT.txt'
+          # 上游拉取失败时保留已有产物并给出警告，不让每日任务因为上游抖动而红掉
+          python3 scripts/clash2sing.py "$EHGAL" sing/thirdparty/ehgallery.json --name EHGallery \
+            || echo "::warning file=sing/thirdparty/ehgallery.json::EHGallery 上游拉取失败，保留现有产物"
+          python3 scripts/clash2sing.py "$BHMT" sing/thirdparty/bilibili-hmt.json --name BilibiliHMT \
+            || echo "::warning file=sing/thirdparty/bilibili-hmt.json::BilibiliHMT 上游拉取失败，保留现有产物"
+
+      - name: 安装 sing-box 用于校验
+        run: |
+          set -euo pipefail
+          VER=$(curl -fsSL https://api.github.com/repos/SagerNet/sing-box/releases/latest | jq -r .tag_name)
+          NUM=${VER#v}
+          curl -fsSL -o /tmp/sb.tar.gz "https://github.com/SagerNet/sing-box/releases/download/${VER}/sing-box-${NUM}-linux-amd64.tar.gz"
+          tar -xzf /tmp/sb.tar.gz -C /tmp
+          install -m 755 "/tmp/sing-box-${NUM}-linux-amd64/sing-box" /usr/local/bin/sing-box
+          sing-box version
+
+      - name: 用真实引擎编译校验
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/srs
+          fail=0
+          for f in $(find sing -name '*.json' | sort); do
+            if sing-box rule-set compile --output "/tmp/srs/$(basename "${f%.json}").srs" "$f"; then
+              echo "[通过] $f"
+            else
+              echo "[失败] $f"
+              fail=1
+            fi
+          done
+          exit $fail
+
+      - name: 提交变更
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sing
+          if git diff --cached --quiet; then
+            echo "[跳过] sing/ 无变更"
+          else
+            git commit -m "chore(sing): 重新生成 sing-box 规则集"
+            git push
+          fi
