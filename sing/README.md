@@ -107,42 +107,86 @@ URL 统一使用 raw 地址（NetProxy 默认通过 `s-download` HTTP Client 走
 ## 二、自定义出站（`outbounds` 分区）
 
 默认配置里已有 `Proxy`（顶层选择器）、`direct`、`block`，**不要重复定义**。
-下面补的是需要单独挑出口的业务分组。
+下面先建地区选择器（对应原 Clash 配置里那些 `filter` 正则），再建业务分组。
 
 ```json
 {
   "outbounds": [
     {
       "type": "selector",
+      "tag": "Hong Kong",
+      "use_all_providers": true,
+      "include": "(?i)(🇭🇰|香港|港区|港區|hong[ _-]?kong|(^|[^a-z])hk([^a-z]|$))",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "Japan",
+      "use_all_providers": true,
+      "include": "(?i)(🇯🇵|日本|东京|東京|大阪|京都|名古屋|福冈|福岡|japan|(^|[^a-z])jp([^a-z]|$))",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "Singapore",
+      "use_all_providers": true,
+      "include": "(?i)(🇸🇬|新加坡|狮城|獅城|singapore|(^|[^a-z])sg([^a-z]|$))",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "United States",
+      "use_all_providers": true,
+      "include": "(?i)(🇺🇸|美国|美國|洛杉矶|洛杉磯|西雅图|西雅圖|硅谷|纽约|紐約|芝加哥|圣何塞|united[ _-]?states|america|(^|[^a-z])us([^a-z]|$))",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "Taiwan",
+      "use_all_providers": true,
+      "include": "(?i)(🇹🇼|台湾|臺灣|台北|新北|桃园|桃園|台中|高雄|taiwan|(^|[^a-z])tw([^a-z]|$))",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
+      "tag": "Macau",
+      "use_all_providers": true,
+      "include": "(?i)(🇲🇴|澳门|澳門|macau|macao|(^|[^a-z])mo([^a-z]|$))",
+      "interrupt_exist_connections": true
+    },
+    {
+      "type": "selector",
       "tag": "莲纪的网站",
-      "outbounds": ["direct", "Proxy"],
+      "outbounds": ["direct", "Hong Kong", "Japan", "Singapore", "United States", "Proxy"],
       "default": "direct",
       "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "EXhentai",
-      "outbounds": ["direct", "Proxy"],
-      "default": "Proxy",
+      "outbounds": ["direct", "Japan", "Hong Kong", "Proxy"],
+      "default": "direct",
       "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "优质代理",
-      "outbounds": ["Proxy", "direct"],
+      "outbounds": ["Proxy", "United States", "Singapore", "Japan", "Hong Kong", "direct"],
       "default": "Proxy",
       "interrupt_exist_connections": true
     },
     {
       "type": "selector",
       "tag": "哔哩哔哩港澳台",
-      "use_all_providers": true,
-      "include": "(?i)(🇭🇰|🇲🇴|🇹🇼|香港|澳门|澳門|台湾|臺灣|台北|新北|桃园|台中|高雄|hong[ _-]?kong|macau|taiwan|taipei|(^|[^a-z])(hk|mo|tw)([^a-z]|$))",
+      "outbounds": ["direct", "Hong Kong", "Macau", "Taiwan", "Proxy"],
+      "default": "direct",
       "interrupt_exist_connections": true
     }
   ]
 }
 ```
+
+> 想再加 AI / TikTok / 谷歌商店 这类独立分组，照抄业务分组的写法再配一条路由规则即可。
 
 ## 三、路由规则（插入到 `route.rules`）
 
@@ -197,10 +241,18 @@ URL 统一使用 raw 地址（NetProxy 默认通过 `s-download` HTTP Client 走
 | Netflix / Bilibili | `geosite/netflix` `geosite/bilibili` |
 | 境外 AI（含 Claude、Gemini） | `geosite/category-ai-!cn`（默认配置已启用） |
 
-`claude`、`gemini` 没有独立 tag，已被 `geosite/category-ai-!cn` 覆盖，不需要单独加。
+`claude`、`gemini`、`ehgallery` 在上游没有独立 tag，前两个已被 `geosite/category-ai-!cn` 覆盖，
+EHGallery 已在本仓库 `sing/thirdparty/` 自行转换。
 
-## 五、已知差异
+## 五、已知差异与坑
 
+- **`use_all_providers` / `include` 是 reF1nd 分支特有字段**：NetProxy 的核心是
+  [reF1nd/sing-box](https://github.com/reF1nd/sing-box)，不是上游 SagerNet 版本。
+  这两个字段在上游 sing-box 里会直接报 `unknown field`，**不能照抄上游示例写自定义出站**，
+  以 NetProxy 官方文档的写法为准。
+- **没有 `exclude`**：NetProxy 文档只列了 `include`，未列出 `exclude`。
+  原 Clash 配置里"排除 1.5x / 2x / 10x 倍率节点"这类需求无法用 `exclude-filter` 直译，
+  需要自己实测内核是否支持该字段，或改用更严格的 `include` 正则。
 - **`no-resolve` 不存在**：sing-box 里 IP 类条件只在目标 IP 已知时生效（直连 IP 或经过
   `action: resolve` 之后）。本仓库转换时已忽略该参数，语义与 Clash 的 `no-resolve` 一致。
 - **`fallback` 类型无对应**：Clash 的 `fallback` 策略组在 sing-box 里只能近似成 `urltest`。
