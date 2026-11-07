@@ -8,4 +8,4 @@ payload:
   - IP-CIDR,140.91.230.15/32,no-resolve
 # 新加坡西小鸡
   - IP-CIDR,149.118.53.245/32,no-resolve
-  - IP-CIDR,149.118.38.156/32,no-resolve  
+  - IP-CIDR,140.245.62.173/32,no-resolve  
